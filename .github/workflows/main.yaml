@@ -83,6 +83,7 @@ jobs:
       - name: Pull latest images
         run: |
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          
       - name: Download Artifact Folder from S3
         run: |
           aws s3 cp --recursive s3://texts-s3-model/artifacts/ ./
